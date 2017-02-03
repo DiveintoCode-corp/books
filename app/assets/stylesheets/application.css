@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .upload_image{
+ background-color: #000;
+ background-image: none;
+ border-radius: 5px;
+ color: #FFF;
+ padding: 5px 10px 5px 10px;
+ margin: 10px 0px;
+ width:100px;
+ }
