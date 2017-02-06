@@ -1,33 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Memo</th>
-      <th>Author</th>
-      <th>Picture</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.memo %></td>
-        <td><%= book.author %></td>
-        <td><%= book.picture %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-sm-4 col-xs=12">
+        <ul class="each_book">
+          <li><%= image_tag book.picture , size: '100x100' %></li>
+          <li>Title:<%= book.title %></li>
+          <li>Memo:<%= book.memo %></li>
+          <li>Author:<%= book.author %></li>
+          <li>
+            <ul>
+              <li><%= link_to 'Show', book, class: "btn btn-default btn-sm" %></li>
+              <li><%= link_to 'Edit', edit_book_path(book), class: "btn btn-default btn-sm" %></li>
+              <li><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "" %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Book', new_book_path %>
+    </div>
+  </div>
+</div>
