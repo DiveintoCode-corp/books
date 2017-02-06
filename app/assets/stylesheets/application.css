@@ -41,24 +41,28 @@ ul img{
   padding: 0px;
   border: 1px solid #000;
 }
- ul ul li{
+
+.data li{
+  padding: 3px 0px;
+}
+
+.buttons li{
   padding: 5px 5px 5px 0px;
   float:left;
  }
 
- ul ul:after{
+ .buttons:after{
   content: "";
   display: block;
   clear: both;
  }
 
  .each_book{
-  height: 310px;
+  height: 330px;
   margin: 10px 0px;
   padding: 20px;
   border: 2px solid #ccc;
   border-radius: 10px;
-  overflow: scroll;
  }
 
  .form-group ul{
@@ -73,8 +77,10 @@ ul img{
    border :0px solid #000;
  }
 
-.detail{
+.data{
   font-size:15px;
+  height: 100px;
+  overflow: scroll;
 }
 
 .detail li{

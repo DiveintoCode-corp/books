@@ -7,11 +7,15 @@
       <div class="col-lg-4 col-sm-6 col-xs-12">
         <ul class="each_book">
           <li><%= image_tag book.picture , size: '100x100' %></li>
+          <li>
+            <ul class="data" >
           <li>Title:<%= book.title %></li>
           <li>Memo:<%= book.memo %></li>
           <li>Author:<%= book.author %></li>
+        </ul>
+      </li>
           <li>
-            <ul>
+            <ul class="buttons">
               <li><%= link_to 'Show', book, class: "btn btn-default btn-sm btn_B" %></li>
               <li><%= link_to 'Edit', edit_book_path(book), class: "btn btn-default btn-sm btn_B" %></li>
             </ul>
