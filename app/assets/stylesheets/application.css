@@ -32,8 +32,10 @@
  }
 
 ul img{
-  width: 100%;
-  padding: 0px 0px 10px 0px;
+  max-width: 100%;
+  margin: 0px 0px 10px;
+  padding: 0px;
+  border: 1px solid #000;
 }
  ul ul li{
   padding: 5px 5px 5px 0px;
@@ -51,4 +53,16 @@ ul img{
   padding: 20px;
   border: 2px solid #ccc;
   border-radius: 10px;
+ }
+
+ .form-group ul{
+   margin: 0px;
+   padding: 0px;
+   border :0px solid #000;
+ }
+
+ .form-group ul li{
+   margin: 0px;
+   padding: 0px;
+   border :0px solid #000;
  }
