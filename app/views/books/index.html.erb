@@ -1,10 +1,10 @@
-<div class="container">
+
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <p id="notice"><%= notice %></p>
 
     <% @books.each do |book| %>
-      <div class="col-sm-4 col-xs=12">
+      <div class="col-lg-4 col-sm-6 col-xs-12">
         <ul class="each_book">
           <li><%= image_tag book.picture , size: '100x100' %></li>
           <li>Title:<%= book.title %></li>
@@ -12,8 +12,8 @@
           <li>Author:<%= book.author %></li>
           <li>
             <ul>
-              <li><%= link_to 'Show', book, class: "btn btn-default btn-sm" %></li>
-              <li><%= link_to 'Edit', edit_book_path(book), class: "btn btn-default btn-sm" %></li>
+              <li><%= link_to 'Show', book, class: "btn btn-default btn-sm btn_B" %></li>
+              <li><%= link_to 'Edit', edit_book_path(book), class: "btn btn-default btn-sm btn_B" %></li>
             </ul>
           <li><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "" %></li>
           </li>
@@ -23,4 +23,3 @@
 
     </div>
   </div>
-</div>
