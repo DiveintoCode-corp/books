@@ -1,24 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <p id="notice"><%= notice %></p>
+      <ul>
+        <li>Title:<%= @book.title %></li>
+        <li>Memo:<%= @book.memo %></li>
+        <li>Author:<%= @book.author %></li>
+        <li>Picture:<%= image_tag(@book.picture_url) if @book.picture.present? %></li>
+        <li></li>
+      </ul>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong>Memo:</strong>
-  <%= @book.memo %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@book.picture_url) if @book.picture.present? %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+      </div>
+    </div>
+  </div>
