@@ -35,7 +35,7 @@
     <%= f.label :picture, class: "col-sm-2" %>
     <div class="col-sm-10">
       <%= image_tag(book.picture_url, size:'200x200') if book.picture.present? %>
-      <%= f.file_field :picture, class: 'form-control upload_image' %>
+      <%= f.file_field :picture %>
     </div>
   </div>
 

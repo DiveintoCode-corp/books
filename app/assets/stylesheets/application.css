@@ -99,6 +99,12 @@ a.btn_B{
   background-color: #000;
 }
 
+a.btn_B:hover{
+  color: #fff;
+  background-color: #ccc;
+}
+
+
 a.btn_B:visited{
   color: #fff;
   background-color: #000;
