@@ -2216,25 +2216,25 @@ ul img{
   padding: 0px 0px 10px 0px;
 }
 
-.btn_A{
+.btn_green{
   color: #fff;
   background-color: #2999af;
 }
 
-a.btn_A{
+a.btn_green{
   color: #fff;
 }
 
-a.btn_A:visited{
+a.btn_green:visited{
   color: #fff;
 }
 
-a.btn_B{
+a.btn_blacklack{
   color: #fff;
   background-color: #000;
 }
 
-a.btn_B:visited{
+a.btn_blacklack:visited{
   color: #fff;
   background-color: #000;
 }
