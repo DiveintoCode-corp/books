@@ -44,7 +44,6 @@ ul{
 
 ul img{
   max-width: 100%;
-  overflow: scroll;
   margin: 0px 0px 10px;
   padding: 0px;
   border: 1px solid #000;
@@ -98,18 +97,18 @@ a.btn_green:visited{
   color: #fff;
 }
 
-a.btn_blacklack{
+a.btn_black{
   color: #fff;
   background-color: #000;
 }
 
-a.btn_blacklack:hover{
+a.btn_black:hover{
   color: #fff;
   background-color: #ccc;
 }
 
 
-a.btn_blacklack:visited{
+a.btn_black:visited{
   color: #fff;
   background-color: #000;
 }
