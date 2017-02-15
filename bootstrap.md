@@ -10,12 +10,12 @@ git clone　https://github.com/igaiga/books_app_rails_5001
 cd workspace/igaiga/books_app_rails_5001
 ```
 
-### workspaceが無い場合
+#### workspaceが無い場合
 ```
 mkdir workspace
 ```
 
-### Gemfileに以下を記述
+#### Gemfileに以下を記述
 ```
 gem 'twitter-bootstrap-rails'
 ```
@@ -24,28 +24,28 @@ gem 'twitter-bootstrap-rails'
 bundle install
 ```
 
-### cssファイルをアプリのディレクトリに配置
+#### cssファイルをアプリのディレクトリに配置
 
 ```
 rails generate bootstrap:install static
 ```
 
-### サーバー起動
+#### サーバー起動
 
 ```
 rails s
 ```
 
-###「new book」から4つほどテストデータを投稿
+####「new book」から4つほどテストデータを投稿
 
 ## 2-1 Bootstrapのクラスをあててみる
 ## 2-2 form-group
 
-###「new book」をクリックして、new.index.htmlを表示した状態にする
+####「new book」をクリックして、new.index.htmlを表示した状態にする
 
-### app/views/books/\_form.html.erbに以下を記述
-### divタグのfieldクラスをform-groupクラスに変更
-### 見た目の変化はわずか（各要素の間に若干余白が生まれる）
+#### app/views/books/\_form.html.erbに以下を記述
+#### divタグのfieldクラスをform-groupクラスに変更
+#### 見た目の変化はわずか（各要素の間に若干余白が生まれる）
 
 ```
 <%= form_for(book) do |f| %>
@@ -90,9 +90,9 @@ rails s
 ## 2-3 Railsのタグにクラスをあてる
 ## 2-4 form-control
 
-### app/views/books/\_form.html.erbに以下を記述
-### f.text_field,t.text_areaタグにform-controlクラスを適用
-### 入力欄が横に広がり、角が丸くなる
+#### app/views/books/\_form.html.erbに以下を記述
+#### f.text_field,t.text_areaタグにform-controlクラスを適用
+#### 入力欄が横に広がり、角が丸くなる
 
 ```
 <%= form_for(book) do |f| %>
@@ -142,16 +142,14 @@ rails s
 ## backのリンクに余白が生まれる
 ```
 <h2>New Book</h2>
-
 <%= render 'form', book: @book %>
-
 <%= link_to 'Back', books_path, class:"btn" %>
 ```
 
 
 ## 2-6 複数のBootstrapクラスをあてる(btn-sm btn-default
-### app/views/books/new.html.erbに以下を記述
-### btn btn-defaultをlink_toに記述
+#### app/views/books/new.html.erbに以下を記述
+#### btn btn-defaultをlink_toに記述
 
 ```
 <h2>New Book</h2>
@@ -165,10 +163,10 @@ rails s
 ## 2-8 グリッドシステム
 ## 2-9 containerとrow
 
-###「back」をクリックして、index.html.erbに移動
-### app/views/books/index.html.erbに以下を記述
-### テーブルレイアウトになっているので、まず、ulを使ったレイアウトに変更
-### <%= book.picture %>をimage_tagに変更
+####「back」をクリックして、index.html.erbに移動
+#### app/views/books/index.html.erbに以下を記述
+#### テーブルレイアウトになっているので、まず、ulを使ったレイアウトに変更
+#### <%= book.picture %>をimage_tagに変更
 
 ```
 <p id="notice"><%= notice %></p>
@@ -183,14 +181,15 @@ rails s
       <li><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' }%></li>
     </ul>
 <% end %>
+<%= link_to 'New Book', new_book_path %>
 ```
 
 
 ## 2-9 containerとrow
 
-### app/views/layout/application.html.erbに以下を記述
-### divタグを追加し、containerクラスをあてる
-### yieldの説明はRailsコースで済んでいない場合は解説
+#### app/views/layout/application.html.erbに以下を記述
+#### divタグを追加し、containerクラスをあてる
+#### yieldの説明はRailsコースで済んでいない場合は解説
 ```
   <body>
     <div class="container">
@@ -202,7 +201,7 @@ rails s
 
 ## app/views/books/index.html.erbに以下を記述
 ## 新たにdivタグを作り、rowを記述
-## これでcontainerをrowが入れ子に
+## これでcontainerとrowが入れ子に
 
 ```
 <div class="row">
@@ -217,15 +216,16 @@ rails s
         <li><%= link_to 'Edit', edit_book_path(book) %></li>          <li><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' }%></li>
       </ul>
  <% end %>
+ <%= link_to 'New Book', new_book_path %>
 </div>
 ```
 
 
 ## 2-10 col-lg-4の意味
-### app/views/books/index.html.erbに以下を記述
-### 新たにdivタグを作り、col-lg-4 col-sm-6 col-xs-12を追記
-### col-lg-4 col-sm-6 col-xs-12を適用したdivタグは必ずeachの下の階層に置く
-### 各divタグが横並びになる
+#### app/views/books/index.html.erbに以下を記述
+#### 新たにdivタグを作り、col-lg-4 col-sm-6 col-xs-12を追記
+#### col-lg-4 col-sm-6 col-xs-12を適用したdivタグは必ずeachの下の階層に置く
+#### 各divタグが横並びになる
 
 ```
 <div class="row">
@@ -242,14 +242,15 @@ rails s
       </ul>
    </div>
  <% end %>
+  <%= link_to 'New Book', new_book_path %>
 </div>
 ```
 
 
 ## 2-11段組とmargin,padding
 
-### app/assets/stylesheets/application.cssに以下を追記
-### ulの前の余計な余白がなくなる
+#### app/assets/stylesheets/application.cssに以下を追記
+#### ulの前の余計な余白がなくなる
 ```
 ul{
   margin: 0px;
@@ -258,25 +259,19 @@ ul{
 ```
 
 
-
-
-
-
-### app/views/books/index.html.erbに以下を記述
+#### app/views/books/index.html.erbに以下を記述
 ```
 ```
 
 
-### app/views/books/\_form.html.erbに
-以下を記述
+#### app/views/books/\_form.html.erbに以下を記述
 ```
 
 
 ```
 
 
-##\ app/views/books/\_form.html.erbに
-以下を記述
+#### app/views/books/\_form.html.erbに以下を記述
 ```
 <%= form_for(book, html: {class: "form-horizontal"}) do |f|%>
   <% if book.errors.any? %>
@@ -329,7 +324,7 @@ ul{
 
 
 
-### app/views/layouts/application.html.erbに以下を記述
+#### app/views/layouts/application.html.erbに以下を記述
 ```
 
 <body>
@@ -348,7 +343,7 @@ ul{
 
 ```
 
-### app/views/books/index.html.erbに
+#### app/views/books/index.html.erbに
 以下を記述
 ```
 <div class="row">
@@ -380,7 +375,7 @@ ul{
 ```
 
 
-### app/assets/stylesheets/application.cssに
+#### app/assets/stylesheets/application.cssに
 以下を記述
 ```
 
@@ -421,7 +416,7 @@ ul{
 
 
 
-### app/views/layouts/new.html.erbに以下を記述
+#### app/views/layouts/new.html.erbに以下を記述
 ```
 <div class="row">
   <div class="col-xs-10 col-xs-offset-1">
@@ -437,7 +432,7 @@ ul{
 
 
 
-### app/views/layouts/edit.html.erbに#以下を記述
+#### app/views/layouts/edit.html.erbに#以下を記述
 ```
 <div class="row">
   <div class="col-xs-10 col-xs-offset-1">
@@ -451,7 +446,7 @@ ul{
 </div>
 ```
 
-### app/views/layouts/show.html.erbに以下を記述
+#### app/views/layouts/show.html.erbに以下を記述
 ```
 <div class="row">
   <div class="col-xs-8 col-xs-offset-2">
@@ -471,7 +466,7 @@ ul{
 ```
 
 
-### app/assets/stylesheets/application.cssに以下を記述
+#### app/assets/stylesheets/application.cssに以下を記述
 ```
   .btn_green{
     color: #fff;
@@ -488,7 +483,7 @@ ul{
 ```
 
 
-### app/views/books/\_form.html.erbに以下を記述(submitにbtn_greenクラスを追加）
+#### app/views/books/\_form.html.erbに以下を記述(submitにbtn_greenクラスを追加）
 ```
   <div class="actions">
     <%= f.submit class: "btn btn-default btn_green" %>
@@ -496,13 +491,13 @@ ul{
 ```
 
 
-### app/views/layouts/application.html.erbに以下を記述(link_toにbtn_greenクラスを追加）
+#### app/views/layouts/application.html.erbに以下を記述(link_toにbtn_greenクラスを追加）
 ```
 <%= link_to 'New Book', new_book_path, class: "btn btn-default btn_green"%>
 ```
 
 
-### app/assets/stylesheets/application.cssに以下を記述
+#### app/assets/stylesheets/application.cssに以下を記述
 ```
 a.btn_black{
   color: #fff;
@@ -522,19 +517,19 @@ a.btn_black:visited{
 ```
 
 
-### app/views/layouts/index.html.erbに以下を記述(showとeditのlink_toにbtn_blackを追加）
+#### app/views/layouts/index.html.erbに以下を記述(showとeditのlink_toにbtn_blackを追加）
 ```
 <li><%= link_to 'Show', book, class: "btn btn-default btn-sm btn_black" %></li>
 <li><%= link_to 'Edit', edit_book_path(book), class: "btn btn-default btn-sm btn_black" %></li>
 ```
 
-### app/views/layouts/new.html.erbに以下を記述(backのlink_toにbtn_blackを追加）
+#### app/views/layouts/new.html.erbに以下を記述(backのlink_toにbtn_blackを追加）
 ```
 <%= link_to 'Back', books_path, class: "btn btn-default btn-sm btn_black"  %>
 ```
 
 
-### app/views/layouts/edit.html.erbに以下を記述(backとeditのlink_toにbtn_blackを追加）
+#### app/views/layouts/edit.html.erbに以下を記述(backとeditのlink_toにbtn_blackを追加）
 ```
       <%= link_to 'Show', @book, class: "btn btn-default btn-sm btn_black" %>
       <%= link_to 'Back', books_path, class: "btn btn-default btn-sm btn_black" %>
@@ -548,7 +543,7 @@ a.btn_black:visited{
 
 
 
-### app/assets/stylesheets/application.cssに以下を記述
+#### app/assets/stylesheets/application.cssに以下を記述
 ```
 .detail li{
   padding: 0px 0px 10px 0px;
@@ -556,13 +551,13 @@ a.btn_black:visited{
 ```
 
 
-### app/views/layouts/●.html.erbに以下を記述(detailクラスを追記）
+#### app/views/layouts/●.html.erbに以下を記述(detailクラスを追記）
 ```
 <ul class="detail">
 ```
 
 
-### app/assets/stylesheets/application.cssに以下を記述
+#### app/assets/stylesheets/application.cssに以下を記述
 ```
 .each_book{
   height: 330px;
@@ -574,7 +569,7 @@ a.btn_black:visited{
 ```
 
 
-### app/views/layouts/●.html.erbに以下を記述(each_bookクラスを追加）
+#### app/views/layouts/●.html.erbに以下を記述(each_bookクラスを追加）
 ```
 <% @books.each do |book| %>
       <div class="col-lg-4 col-sm-6 col-xs-12">
@@ -584,7 +579,7 @@ a.btn_black:visited{
 
 
 
-### app/assets/stylesheets/application.cssに以下を記述
+#### app/assets/stylesheets/application.cssに以下を記述
 ```
 .data{
   font-size:15px;
@@ -598,14 +593,14 @@ a.btn_black:visited{
 ```
 
 
-### app/views/layouts/index.html.erbに以下を記述dataクラスを追記
+#### app/views/layouts/index.html.erbに以下を記述dataクラスを追記
 ```
 <ul class="data">
               <li>Title:<%= book.title %></li>
 ```
 
 
-### app/assets/stylesheets/application.cssに以下を記述
+#### app/assets/stylesheets/application.cssに以下を記述
 ```
 .buttons li{
   padding: 5px 5px 5px 0px;
@@ -620,7 +615,7 @@ a.btn_black:visited{
 ```
 
 
-### app/views/layouts/index.html.erbに以下を記述
+#### app/views/layouts/index.html.erbに以下を記述
 ```
 <ul class="buttons">
               <li><%= link_to 'Show', book, class: "btn btn-default btn-sm btn_black" %></li>
