@@ -15,100 +15,109 @@
  */
 
 
-body{
-  margin: 0px;
-  padding: 0px;
-}
-
-h1{
-  margin: 10px 0px;
-}
-
-h2{
-  margin: 30px 0px;
-}
-
-a{
-  color: #2999af;
-}
-
-a:visited{
-  color: #2999af;
-}
-
-ul{
-  list-style-type: none;
-  margin: 0px;
-  padding: 10px 0px;
- }
-
-ul img{
-  max-width: 100%;
-  margin: 0px 0px 10px;
-  padding: 0px;
-  border: 1px solid #000;
-}
-
-.data{
-  font-size:15px;
-  height: 100px;
-  overflow: scroll;
-}
-
-.data li{
-  padding: 3px 0px;
-}
-
-.buttons li{
-  padding: 5px 5px 5px 0px;
-  float:left;
- }
-
-.buttons:after{
-  content: "";
-  display: block;
-  clear: both;
- }
-
-.each_book{
-  height: 330px;
-  margin: 15px 0px;
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
- }
+ /*
+  * This is a manifest file that'll be compiled into application.css, which will include all the files
+  * listed below.
+  *
+  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+  *
+  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+  * files in this directory. Styles in this file should be added after the last require_* statement.
+  * It is generally better to create a new file per style scope.
+  *
+  *= require_tree .
+  *= require_self
+  */
 
 
+  h1{
+    margin: 10px 0px;
+  }
 
-.detail li{
-  padding: 0px 0px 10px 0px;
-}
+  h2{
+    margin: 30px 0px;
+  }
 
-.btn_green{
-  color: #fff;
-  background-color: #2999af;
-}
+  a{
+    color: #2999af;
+  }
 
-a.btn_green{
-  color: #fff;
-}
-
-a.btn_green:visited{
-  color: #fff;
-}
-
-a.btn_black{
-  color: #fff;
-  background-color: #000;
-}
-
-a.btn_black:hover{
-  color: #fff;
-  background-color: #ccc;
-}
+  a:visited{
+    color: #2999af;
+  }
 
 
-a.btn_black:visited{
-  color: #fff;
-  background-color: #000;
-}
+  ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px 0px;
+   }
+
+   .each_book{
+     height: 330px;
+     margin: 15px 0px;
+     padding: 20px;
+     border: 2px solid #ccc;
+     border-radius: 10px;
+    }
+
+
+    .data{
+      font-size:15px;
+      height: 100px;
+      overflow: scroll;
+    }
+
+    .data li{
+      padding: 3px 0px;
+    }
+
+    .buttons li{
+      padding: 5px 5px 5px 0px;
+      float:left;
+     }
+
+     .buttons:after{
+       content: "";
+       display: block;
+       clear: both;
+      }
+
+      ul img{
+        max-width: 100%;
+        margin: 0px 0px 10px;
+        padding: 0px;
+        border: 1px solid #000;
+      }
+
+
+      .btn_green{
+        color: #fff;
+        background-color: #2999af;
+      }
+
+      a.btn_green{
+        color: #fff;
+      }
+
+      a.btn_green:visited{
+        color: #fff;
+      }
+
+      a.btn_black{
+        color: #fff;
+        background-color: #000;
+      }
+
+      a.btn_black:hover{
+        color: #fff;
+        background-color: #ccc;
+      }
+
+
+      a.btn_black:visited{
+        color: #fff;
+        background-color: #000;
+      }

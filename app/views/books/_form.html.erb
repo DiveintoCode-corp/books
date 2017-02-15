@@ -1,7 +1,8 @@
-<%= form_for(book, html: {class: "form-horizontal"}) do |f|%>
+<%= form_for(book) do |f| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
       <ul>
       <% book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,32 +12,23 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :title, class: "col-sm-2" %>
-    <div class="col-sm-10">
-      <%= f.text_field :title, class:"form-control" %>
-    </div>
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"form-control"  %>
   </div>
 
   <div class="form-group">
-    <%= f.label :memo, class: "col-sm-2" %>
-    <div class="col-sm-10">
-      <%= f.text_area :memo, class:"form-control"  %>
-    </div>
+    <%= f.label :memo %>
+    <%= f.text_area :memo, class:"form-control"  %>
   </div>
 
   <div class="form-group">
-    <%= f.label :author, class: "col-sm-2" %>
-    <div class="col-sm-10">
-      <%= f.text_field :author, class:"form-control" %>
-    </div>
+    <%= f.label :author %><br>
+    <%= f.text_field :author, class:"form-control"  %>
   </div>
 
   <div class="form-group">
-    <%= f.label :picture, class: "col-sm-2" %>
-    <div class="col-sm-10">
-      <%= image_tag(book.picture_url, size:'200x200') if book.picture.present? %>
-      <%= f.file_field :picture %>
-    </div>
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture %>
   </div>
 
   <div class="actions">
