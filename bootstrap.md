@@ -35,3 +35,13 @@ rails s
 ```
 
 ##「new book」から4つほどテストデータを投稿
+
+
+```html:sample
+<div class="form-group">
+  <%= f.label :memo %>
+  <%= f.text_area :memo %>
+</div>
+```
+
+#app/views/books/____form.html.erbに以下を記述
